@@ -15,7 +15,7 @@
         app:defaultNavHost="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_cuseonstraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/main_nav_graph" />
 
     <include layout="@layout/partial_bottom_nav" />
