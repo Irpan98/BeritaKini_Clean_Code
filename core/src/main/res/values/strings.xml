@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="oops_something_went_wrong">Oops.. something went wrong</string>
+    <string name="news_image">News Image</string>
+    <string name="bookmark_icon">bookmark Icon</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="appbar">Appbar</string>
+    <string name="home">Home</string>
+</resources>

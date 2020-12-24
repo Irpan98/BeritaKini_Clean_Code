@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:elevation="0dp">
+
+    <!--    to use this partial should user Coordinate Layout-->
+    <Toolbar
+        android:id="@+id/tbApp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_bar_view"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:tooltipText="Cari Berita"
+                app:queryHint="Cari Berita ..."
+                tools:targetApi="o" />
+        </FrameLayout>
+
+    </Toolbar>
+
+
+</com.google.android.material.appbar.AppBarLayout>

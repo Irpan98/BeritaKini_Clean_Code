@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".detail.DetailFragment">
+
+    <ImageView
+        android:id="@+id/ivNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/news_image"
+        android:src="@drawable/loading_image" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:lines="2"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            tools:text="Berita sekarang adalah Berita sekarang adalah Berita sekarang adalah" />
+
+        <ImageView
+
+            android:id="@+id/ivBookmark"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/news_image"
+            android:src="@drawable/ic_bookmarked" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvSourceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="18sp"
+        tools:text="Berita sekarang adalah" />
+
+
+    <TextView
+        android:id="@+id/tvAuthor"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="14sp"
+        tools:text="Berita sekarang adalah" />
+
+    <Button
+        android:id="@+id/btnKeBerita"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/ke_berita"
+        android:textColor="@android:color/white" />
+</LinearLayout>
