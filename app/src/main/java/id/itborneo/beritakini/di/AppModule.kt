@@ -17,7 +17,6 @@ val viewModelModule = module {
     single {
         MainViewModel(get())
     }
-
     viewModel {
         DetailViewModel(get())
     }
