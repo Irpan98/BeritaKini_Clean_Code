@@ -10,9 +10,9 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import id.itborneo.beritakini.R
+import id.itborneo.core.data.model.News
 import id.itborneo.core.utils.constant.EXTRA_NEWS
 import id.itborneo.core.utils.mapperUtils.SingleMapper
-import id.itborneo.core.data.model.News
 import id.itborneo.core.utils.uiUtils.BottomNavigationUtils
 import kotlinx.android.synthetic.main.fragment_detail.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -21,7 +21,6 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class DetailFragment : Fragment() {
 
     private val viewModel: DetailViewModel by viewModel()
-    private lateinit var bookmarkViewModel: DetailBookmarkViewModel
     private lateinit var news: News
 
     override fun onCreateView(
@@ -34,7 +33,6 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initBookmark()
         initButtonListener()
 
         removeBottomNav()
@@ -58,9 +56,6 @@ class DetailFragment : Fragment() {
         }
     }
 
-    private fun initBookmark() {
-        bookmarkViewModel = DetailBookmarkViewModel(requireContext(), viewModel)
-    }
 
     private fun initIntentData() {
         val getDataIntent = arguments?.getParcelable<News>(EXTRA_NEWS)
@@ -102,7 +97,7 @@ class DetailFragment : Fragment() {
 
     }
 
-    private  fun updateUIBookmarked() {
+    private fun updateUIBookmarked() {
 
         if (news.isBookmarked) {
             Glide.with(requireContext())

@@ -1,0 +1,2 @@
+int id rvNews 0x7e010000
+int layout fragment_bookmarks 0x7e020000
