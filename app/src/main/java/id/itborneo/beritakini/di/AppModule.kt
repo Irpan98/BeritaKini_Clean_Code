@@ -13,8 +13,7 @@ val useCaseModule = module {
     }
 }
 val viewModelModule = module {
-    //2 fragment user
-    single {
+    viewModel {
         MainViewModel(get())
     }
     viewModel {

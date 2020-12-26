@@ -97,6 +97,7 @@ class HomeFragment : Fragment() {
         }
         rvNews.adapter = adapter
         rvNews.apply {
+
             layoutManager = LinearLayoutManager(context)
         }
     }
@@ -197,5 +198,12 @@ class HomeFragment : Fragment() {
         } else {
             shimmerLoading.hideLoading()
         }
+    }
+
+    override fun onDestroyView() {
+
+        super.onDestroyView()
+        rvNews.adapter = null
+
     }
 }
