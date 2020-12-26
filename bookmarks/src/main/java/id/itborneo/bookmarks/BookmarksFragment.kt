@@ -10,10 +10,10 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.itborneo.beritakini.R.id.action_bookmarksFragment_to_detailFragment
-import id.itborneo.core.utils.constant.EXTRA_NEWS
 import id.itborneo.bookmarks.R.layout.fragment_bookmarks
 import id.itborneo.core.data.model.News
 import id.itborneo.core.ui.NewsAdapter
+import id.itborneo.core.utils.constant.EXTRA_NEWS
 import id.itborneo.core.utils.mapperUtils.DataMapper
 import id.itborneo.core.utils.uiUtils.AppbarUtils
 import id.itborneo.core.utils.uiUtils.BottomNavigationUtils
@@ -68,8 +68,8 @@ class BookmarksFragment : Fragment() {
         adapter = NewsAdapter {
             navAction(it)
         }
-        rvNews.adapter = adapter
-        rvNews.apply {
+        rvBookmarks.adapter = adapter
+        rvBookmarks.apply {
             layoutManager = LinearLayoutManager(context)
         }
     }

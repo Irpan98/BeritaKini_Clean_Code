@@ -28,13 +28,11 @@ class BeritaKiniTest {
     private lateinit var useCase: BeritaKiniInteractor
 
 
-
     @Before
     fun setUp() {
 
         viewModel = MainViewModel(useCase)
     }
-
 
 
     @Test

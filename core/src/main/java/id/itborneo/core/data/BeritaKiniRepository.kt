@@ -8,6 +8,7 @@ import id.itborneo.core.data.source.remote.response.NewsItemResponse
 import id.itborneo.core.domain.repository.IBeritaKiniRepository
 import id.itborneo.core.utils.AppExecutors
 import id.itborneo.core.utils.mapperUtils.DataMapper
+import id.itborneo.core.utils.test.EspressoIdlingResource
 import kotlinx.coroutines.flow.Flow
 
 class BeritaKiniRepository(
@@ -17,11 +18,14 @@ class BeritaKiniRepository(
 
 ) : IBeritaKiniRepository {
 
+    override fun getAllNews(): Flow<Resource<List<NewsEntity>>> {
 
-    override fun getAllNews() =
-        object : NetworkBoundResource<List<NewsEntity>, List<NewsItemResponse>>() {
-            override fun loadFromDB(): Flow<List<NewsEntity>> =
-                localDataSource.getAllNews()
+        return object : NetworkBoundResource<List<NewsEntity>, List<NewsItemResponse>>() {
+            override fun loadFromDB(): Flow<List<NewsEntity>> {
+
+                return localDataSource.getAllNews()
+
+            }
 
             override fun shouldFetch(data: List<NewsEntity>?): Boolean = true
 
@@ -34,6 +38,7 @@ class BeritaKiniRepository(
             }
 
         }.asFlow()
+    }
 
     override fun updateBookmark(news: NewsEntity) =
         appExecutors.diskIO().execute { localDataSource.updateBookmark(news) }
