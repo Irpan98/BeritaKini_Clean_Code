@@ -17,12 +17,12 @@ import id.itborneo.core.utils.constant.EXTRA_NEWS
 import id.itborneo.core.utils.mapperUtils.DataMapper
 import id.itborneo.core.utils.uiUtils.AppbarUtils
 import id.itborneo.core.utils.uiUtils.BottomNavigationUtils
-import id.itborneo.core.viewModel.MainViewModel
 import kotlinx.android.synthetic.main.fragment_bookmarks.*
 import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.core.context.loadKoinModules
 
 class BookmarksFragment : Fragment() {
-    private val viewModel: MainViewModel by viewModel()
+    private val viewModel: BookmarksViewModel by viewModel()
     private lateinit var adapter: NewsAdapter
     private lateinit var navController: NavController
 
@@ -37,6 +37,8 @@ class BookmarksFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        loadKoinModules(BookmarksModule)
+
         initView(view)
         initRecyclerView()
         initNav(view)

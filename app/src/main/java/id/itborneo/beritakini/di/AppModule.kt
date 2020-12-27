@@ -5,6 +5,7 @@ import id.itborneo.core.domain.useCase.BeritaKiniInteractor
 import id.itborneo.core.domain.useCase.BeritaKiniUseCase
 import id.itborneo.core.viewModel.MainViewModel
 import org.koin.android.viewmodel.dsl.viewModel
+
 import org.koin.dsl.module
 
 val useCaseModule = module {
