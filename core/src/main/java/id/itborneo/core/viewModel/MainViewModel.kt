@@ -13,7 +13,6 @@ class MainViewModel(private val useCase: BeritaKiniUseCase) : ViewModel() {
 
     fun getAllNews(): LiveData<Resource<List<NewsEntity>>> {
 
-//        Log.d("MainViewModel", "getAllnews" + ::listNews.isInitialized)
         return if (::listNews.isInitialized) {
             listNews
         } else {

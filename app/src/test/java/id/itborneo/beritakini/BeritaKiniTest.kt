@@ -36,7 +36,7 @@ class BeritaKiniTest {
 
 
     @Test
-    fun BeritaKiniTest() {
+    fun beritaKiniTest() {
 
         val dummyData = MutableLiveData<Resource<List<NewsEntity>>>()
         Mockito.`when`(useCase.getAllNews()).thenReturn(dummyData.asFlow())

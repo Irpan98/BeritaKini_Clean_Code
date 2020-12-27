@@ -1,7 +1,6 @@
 package id.itborneo.beritakini.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,8 +34,6 @@ class HomeFragment : Fragment() {
     private lateinit var listNews: List<News>
 
     private val viewModel: MainViewModel by viewModel()
-
-    private val TAG = "MainActivity"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -122,12 +119,10 @@ class HomeFragment : Fragment() {
 
         search_bar_view.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                Log.d(TAG, "setOnQueryTextListener $query")
                 return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                Log.d(TAG, "onQueryTextChange $newText")
 
 
                 if (newText != null) {
@@ -206,4 +201,6 @@ class HomeFragment : Fragment() {
         rvNews.adapter = null
 
     }
+
+
 }

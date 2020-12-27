@@ -38,19 +38,28 @@ class NewsAdapter(val clickListener: (News) -> Unit) :
 
             itemView.apply {
                 tvTitle.text = news.title
+
                 Glide.with(context)
                     .load(news.urlToImage)
                     .apply(RequestOptions().dontTransform().placeholder(R.drawable.loading_image))
                     .into(ivNews)
 
                 if (news.isBookmarked) {
-                    Glide.with(context)
-                        .load(R.drawable.ic_bookmarked)
-                        .into(ivBookmark)
+
+                    tvBookmark.setCompoundDrawablesWithIntrinsicBounds(
+                        R.drawable.ic_bookmarked,
+                        0,
+                        0,
+                        0
+                    )
                 } else {
-                    Glide.with(context)
-                        .load(R.drawable.ic_bookmark_border)
-                        .into(ivBookmark)
+
+                    tvBookmark.setCompoundDrawablesWithIntrinsicBounds(
+                        R.drawable.ic_bookmark_border,
+                        0,
+                        0,
+                        0
+                    )
                 }
 
 

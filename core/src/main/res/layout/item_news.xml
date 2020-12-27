@@ -31,24 +31,12 @@
             android:contentDescription="@string/news_image"
             tools:src="@drawable/loading_image" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvBookmark"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/ivBookmark"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription="@string/bookmark_icon"
-                android:src="@drawable/ic_bookmark_border" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="@string/bookmark" />
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/bookmark" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

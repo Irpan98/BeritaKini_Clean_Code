@@ -40,12 +40,11 @@ val databaseModule = module {
 val networkModule = module {
 
     val hostname = "newsapi.org"
-    val certificatePinner = CertificatePinner.Builder()
+    val certificatePinning = CertificatePinner.Builder()
         .add(hostname, "sha256/LAlZB272xQABCgeTFXzq0MuyQTFpu4lb7LOBjVoJdrE=")
         .add(hostname, "sha256/c5XTqkOxoXqc60M3HuT9fgmfeexiP2+Q8BD3+6abZYU=")
         .add(hostname, "sha256/FEzVOUp4dF3gI0ZVPRJhFbSJVXR+uQmMH65xhs1glH4=")
         .add(hostname, "sha256/hS5jJ4P+iQUErBkvoWBQOd1T7VOAYlOVegvv1iMzpxA=")
-
 
 
         .build()
@@ -56,7 +55,7 @@ val networkModule = module {
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
-            .certificatePinner(certificatePinner)
+            .certificatePinner(certificatePinning)
             .build()
     }
     single {

@@ -13,7 +13,6 @@ class BookmarksViewModel(private val useCase: BeritaKiniUseCase) : ViewModel() {
 
     fun getAllNews(): LiveData<Resource<List<NewsEntity>>> {
 
-//        Log.d("MainViewModel", "getAllnews" + ::listNews.isInitialized)
         return if (::listNews.isInitialized) {
             listNews
         } else {
@@ -22,8 +21,6 @@ class BookmarksViewModel(private val useCase: BeritaKiniUseCase) : ViewModel() {
             useCase.getAllNews().asLiveData()
         }
     }
-
-    fun searchNews(query: String) = useCase.searchNews(query).asLiveData()
 
 
 }
