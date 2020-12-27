@@ -17,8 +17,5 @@ class MainActivity : AppCompatActivity() {
 
         BottomNavigationUtils.initBottomNav(this, R.id.MainNavHostFragment)
 
-
-
-
     }
 }

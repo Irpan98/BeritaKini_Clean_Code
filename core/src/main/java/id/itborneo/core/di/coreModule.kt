@@ -45,8 +45,6 @@ val networkModule = module {
         .add(hostname, "sha256/c5XTqkOxoXqc60M3HuT9fgmfeexiP2+Q8BD3+6abZYU=")
         .add(hostname, "sha256/FEzVOUp4dF3gI0ZVPRJhFbSJVXR+uQmMH65xhs1glH4=")
         .add(hostname, "sha256/hS5jJ4P+iQUErBkvoWBQOd1T7VOAYlOVegvv1iMzpxA=")
-
-
         .build()
 
 
@@ -66,8 +64,6 @@ val networkModule = module {
             .build()
         retrofit.create(ApiService::class.java)
     }
-
-
 }
 
 val repositoryModule = module {
