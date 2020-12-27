@@ -8,6 +8,8 @@ import id.itborneo.core.data.source.remote.RemoteDataSource
 import id.itborneo.core.data.source.remote.network.ApiService
 import id.itborneo.core.domain.repository.IBeritaKiniRepository
 import id.itborneo.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -19,10 +21,17 @@ import java.util.concurrent.TimeUnit
 val databaseModule = module {
     factory { get<BeritaKiniDatabase>().beritaKiniDao() }
     single {
+
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("beritakini".toCharArray())
+        val factory = SupportFactory(passphrase)
+
+
         Room.databaseBuilder(
             androidContext(),
             BeritaKiniDatabase::class.java, "BeritaKini.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
     }
 }
 
