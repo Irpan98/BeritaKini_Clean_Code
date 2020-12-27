@@ -13,7 +13,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "id.itborneo.beritakini"
+        applicationId "id.itborneo.app"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -24,10 +24,15 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -35,7 +40,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    dynamicFeatures = [ ':bookmarks']
+    dynamicFeatures = [':bookmarks']
 }
 
 dependencies {
@@ -43,6 +48,8 @@ dependencies {
     implementation project(":core")
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
 
 
 }

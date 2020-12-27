@@ -5,6 +5,7 @@ import id.itborneo.core.domain.useCase.BeritaKiniInteractor
 import id.itborneo.core.domain.useCase.BeritaKiniUseCase
 import id.itborneo.core.viewModel.MainViewModel
 import org.koin.android.viewmodel.dsl.viewModel
+
 import org.koin.dsl.module
 
 val useCaseModule = module {
@@ -13,11 +14,9 @@ val useCaseModule = module {
     }
 }
 val viewModelModule = module {
-    //2 fragment user
-    single {
+    viewModel {
         MainViewModel(get())
     }
-
     viewModel {
         DetailViewModel(get())
     }

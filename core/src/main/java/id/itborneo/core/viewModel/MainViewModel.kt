@@ -1,6 +1,5 @@
 package id.itborneo.core.viewModel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
@@ -14,7 +13,7 @@ class MainViewModel(private val useCase: BeritaKiniUseCase) : ViewModel() {
 
     fun getAllNews(): LiveData<Resource<List<NewsEntity>>> {
 
-        Log.d("MainViewModel", "getAllnews" + ::listNews.isInitialized)
+//        Log.d("MainViewModel", "getAllnews" + ::listNews.isInitialized)
         return if (::listNews.isInitialized) {
             listNews
         } else {
